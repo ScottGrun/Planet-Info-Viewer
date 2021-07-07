@@ -5,6 +5,7 @@ import PlanetDescription from "../../components/PlanetDescription/PlanetDescript
 import PlanetStatsContainer from "../../components/PlanetStatsContainer/PlanetStatsContainer";
 import { useEffect, useState } from "react";
 import MobileInfoSection from "../../components/PlanetInfoSections/MobileInfoSection";
+import {planets} from '../../data/data.js';
 
 export default function Planet({ planet }) {
   const [sectionDisplayed, setSectionDisplayed] = useState(0);
@@ -118,11 +119,6 @@ const MobileSectionToggler = styled.div`
 
 // This function gets called at build time
 export async function getStaticPaths() {
-  // Call an external API endpoint to get posts
-  const res = await fetch("http://localhost:3000/api/planets");
-  const planets = await res.json();
-
-  // Get the paths we want to pre-render based on posts
   const paths = planets.map((planet) => ({
     params: { name: planet.name },
   }));
@@ -134,11 +130,7 @@ export async function getStaticPaths() {
 
 // This also gets called at build time
 export async function getStaticProps({ params }) {
-  // params contains the post `id`.
-  // If the route is like /posts/1, then params.id is 1
-  const res = await fetch(`http://localhost:3000/api/planets/${params.name}`);
-  const planet = await res.json();
-
+  const planet = planets.filter(p => p.name === params.name)[0];
   // Pass post data to the page via props
   return { props: { planet } };
 }

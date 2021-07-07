@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { baseBodyStyles, h2BaseStyles } from "../../styles/typography";
 import InfoSection from "../PlanetInfoSections/InfoSection";
 import { Tabs, TabPanels, TabPanel } from "@reach/tabs";
+import Image from 'next/image';
 
 export default function PlanetDescription({
   name,
@@ -34,7 +35,7 @@ export default function PlanetDescription({
               >
                 Source: <span>Wikipedia</span>{" "}
               </Source>
-              <img src="/assets/icon-source.svg" />
+              <Image alt="Source for information icon" src="/assets/icon-source.svg" layout="fixed" height={12} width={12} />
             </InformationSource>
           </TabPanel>
 
@@ -48,7 +49,8 @@ export default function PlanetDescription({
               >
                 Source: <span>Wikipedia</span>{" "}
               </Source>
-              <img src="/assets/icon-source.svg" />
+              <Image alt="Source for information icon" src="/assets/icon-source.svg" layout="fixed" height={12} width={12} />
+
             </InformationSource>
           </TabPanel>
 
@@ -62,13 +64,14 @@ export default function PlanetDescription({
               >
                 Source: <span>Wikipedia</span>{" "}
               </Source>
-              <img src="/assets/icon-source.svg" />
+              <Image alt="Source for information icon" src="/assets/icon-source.svg" layout="fixed" height={12} width={12} />
+
             </InformationSource>
           </TabPanel>
         </TabPanels>
       </ContentWrapper>
 
-      <ContentSelector setSectionDisplayed={setSectionDisplayed} planetName={name} />
+      <ContentSelector setSectionDisplayed={setSectionDisplayed} planetname={name} />
     </Wrapper>
   );
 }
@@ -179,7 +182,7 @@ const Source = styled.a`
   ${baseBodyStyles}
   font-size: ${12 / 16}rem;
   color: ${(p) => p.theme.COLORS.dark[500]};
-
+  padding-right: 4px;
   span {
     font-weight: ${(p) => p.theme.WEIGHTS.bold};
     text-decoration: underline;

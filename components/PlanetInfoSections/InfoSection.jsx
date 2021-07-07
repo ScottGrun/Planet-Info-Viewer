@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 import React from 'react'
 import { baseSectionNameStyles } from '../../styles/typography';
-import { Tabs, TabList, Tab, TabPanels, TabPanel } from "@reach/tabs";
+import { Tabs, TabList, Tab } from "@reach/tabs";
 import "@reach/tabs/styles.css";
 
-export default function InfoSection({ className, planetName}) {
+export default function InfoSection({ className, planetname}) {
   return (
-      <Wrapper className={className} planetName={planetName}>
-        <Section ><SectionNumber>01 </SectionNumber><SectionName>Overview</SectionName></Section>
+      <Wrapper className={className} planetname={planetname}>
+        <Section ><SectionNumber>01 </SectionNumber><SectionName>Overview </SectionName></Section>
         <Section ><SectionNumber>02</SectionNumber><SectionName>Internal Structure</SectionName></Section>
         <Section ><SectionNumber>03</SectionNumber><SectionName>Surface Geology</SectionName></Section>
       </Wrapper>
@@ -30,7 +30,7 @@ const Wrapper = styled(TabList)`
   
   [data-reach-tab][data-selected] {
     border-bottom: inherit;
-    background-color: ${p=> p.theme.COLORS[p.planetName]};
+    background-color: ${p=> p.theme.COLORS[p.planetname]};
   }
  
 `;
