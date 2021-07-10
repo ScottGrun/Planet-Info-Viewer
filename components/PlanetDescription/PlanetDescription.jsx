@@ -3,7 +3,8 @@ import React, { useState } from "react";
 import { baseBodyStyles, h2BaseStyles } from "../../styles/typography";
 import InfoSection from "../PlanetInfoSections/InfoSection";
 import { Tabs, TabPanels, TabPanel } from "@reach/tabs";
-import Image from 'next/image';
+import Image from "next/image";
+import { AnimatePresence, motion } from "framer-motion";
 
 export default function PlanetDescription({
   name,
@@ -15,6 +16,8 @@ export default function PlanetDescription({
   structureSrc,
   geology,
   geologySrc,
+  orbit,
+  orbitSrc,
 }) {
   return (
     <Wrapper
@@ -22,11 +25,22 @@ export default function PlanetDescription({
       onChange={(index) => setSectionDisplayed(index)}
     >
       <ContentWrapper>
-        <PlanetName>{name}</PlanetName>
+        <PlanetName
+          initial={{ y: 25, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ type: "spring", stiffness: 70 }}
 
+        >
+          {name}
+        </PlanetName>
         <TabPanels>
           <TabPanel>
-            <Description>{overview}</Description>
+            <Description
+            >
+              {overview}
+            </Description>
+
             <InformationSource>
               <Source
                 href={overviewSrc}
@@ -35,7 +49,13 @@ export default function PlanetDescription({
               >
                 Source: <span>Wikipedia</span>{" "}
               </Source>
-              <Image alt="Source for information icon" src="/assets/icon-source.svg" layout="fixed" height={12} width={12} />
+              <Image
+                alt="Source for information icon"
+                src="/assets/icon-source.svg"
+                layout="fixed"
+                height={12}
+                width={12}
+              />
             </InformationSource>
           </TabPanel>
 
@@ -49,8 +69,13 @@ export default function PlanetDescription({
               >
                 Source: <span>Wikipedia</span>{" "}
               </Source>
-              <Image alt="Source for information icon" src="/assets/icon-source.svg" layout="fixed" height={12} width={12} />
-
+              <Image
+                alt="Source for information icon"
+                src="/assets/icon-source.svg"
+                layout="fixed"
+                height={12}
+                width={12}
+              />
             </InformationSource>
           </TabPanel>
 
@@ -64,14 +89,38 @@ export default function PlanetDescription({
               >
                 Source: <span>Wikipedia</span>{" "}
               </Source>
-              <Image alt="Source for information icon" src="/assets/icon-source.svg" layout="fixed" height={12} width={12} />
+              <Image
+                alt="Source for information icon"
+                src="/assets/icon-source.svg"
+                layout="fixed"
+                height={12}
+                width={12}
+              />
+            </InformationSource>
+          </TabPanel>
 
+          <TabPanel>
+            <Description>{orbit}</Description>
+            <InformationSource>
+              <Source href={orbitSrc} target="_blank" rel="noopener noreferrer">
+                Source: <span>NASA</span>{" "}
+              </Source>
+              <Image
+                alt="Source for information icon"
+                src="/assets/icon-source.svg"
+                layout="fixed"
+                height={12}
+                width={12}
+              />
             </InformationSource>
           </TabPanel>
         </TabPanels>
       </ContentWrapper>
 
-      <ContentSelector setSectionDisplayed={setSectionDisplayed} planetname={name} />
+      <ContentSelector
+        setSectionDisplayed={setSectionDisplayed}
+        planetname={name}
+      />
     </Wrapper>
   );
 }
@@ -99,7 +148,7 @@ const Wrapper = styled(Tabs)`
 
 const ContentSelector = styled(InfoSection)`
   width: 281px;
-  
+
   @media ${(p) => p.theme.QUERIES.laptopAndUp} {
     margin-top: 39px;
     width: 100%;
@@ -118,7 +167,7 @@ const ContentWrapper = styled.div`
   }
 `;
 
-const PlanetName = styled.h2`
+const PlanetName = styled(motion.h1)`
   ${h2BaseStyles}
   text-align: center;
   text-transform: uppercase;
@@ -148,7 +197,6 @@ const Description = styled.p`
     text-align: left;
     margin-top: 24px;
     height: 142px;
-
   }
 
   @media ${(p) => p.theme.QUERIES.laptopAndUp} {

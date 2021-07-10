@@ -13,6 +13,10 @@ export const planets = [
 			"content": "Mercury's surface is similar in appearance to that of the Moon, showing extensive mare-like plains and heavy cratering, indicating that it has been geologically inactive for billions of years. It is more heterogeneous than either Mars's or the Moon’s.",
 			"source": "https://en.wikipedia.org/wiki/Mercury_(planet)#Surface_geology"
 		},
+		"orbit": {
+			"content":"Mercury's highly eccentric, egg-shaped orbit takes the planet as close as 29 million miles (47 million kilometers) and as far as 43 million miles (70 million kilometers) from the Sun. It speeds around the Sun every 88 days, traveling through space at nearly 29 miles (47 kilometers) per second, faster than any other planet.",
+			"source": "https://solarsystem.nasa.gov/planets/mercury/in-depth/#otp_orbit_and_rotation"
+		},
 		"rotation": "58.6 Days",
 		"revolution": "87.97 Days",
 		"radius": "2,439.7 KM",
@@ -22,6 +26,7 @@ export const planets = [
 			"internal": "/assets/planet-mercury-internal.svg",
 			"geology": "/assets/geology-mercury.png"
 		},
+		"model": "/assets/models/Mercury.glb",
 		"sizes": [111, 184, 290]
 	},
 	{
@@ -47,6 +52,7 @@ export const planets = [
 			"internal": "/assets/planet-venus-internal.svg",
 			"geology": "/assets/geology-venus.png"
 		},
+		"model": "/assets/models/Venus.glb",
 		"sizes": [154, 253, 400]
 	},
 	{
@@ -72,6 +78,7 @@ export const planets = [
 			"internal": "/assets/planet-earth-internal.svg",
 			"geology": "/assets/geology-earth.png"
 		},
+		"model": "/assets/models/Earth.glb",
 		"sizes": [173, 285, 450]
 	},
 	{
@@ -97,6 +104,7 @@ export const planets = [
 			"internal": "/assets/planet-mars-internal.svg",
 			"geology": "/assets/geology-mars.png"
 		},
+		"model": "/assets/models/Mars.glb",
 		"sizes": [129, 213, 336]
 	},
 	{
@@ -122,6 +130,7 @@ export const planets = [
 			"internal": "/assets/planet-jupiter-internal.svg",
 			"geology": "/assets/geology-jupiter.png"
 		},
+		"model": "/assets/models/Jupiter.glb",
 		"sizes": [224, 369, 582]
 	},
 	{
@@ -147,6 +156,7 @@ export const planets = [
 			"internal": "/assets/planet-saturn-internal.svg",
 			"geology": "/assets/geology-saturn.png"
 		},
+		"model": "/assets/models/Saturn.glb",
 		"sizes": [256, 422, 665]
 	},
 	{
@@ -172,6 +182,7 @@ export const planets = [
 			"internal": "/assets/planet-uranus-internal.svg",
 			"geology": "/assets/geology-uranus.png"
 		},
+		"model": "/assets/models/Uranus.glb",
 		"sizes": [176, 290, 458]
 	},
 	{
@@ -197,6 +208,7 @@ export const planets = [
 			"internal": "/assets/planet-neptune-internal.svg",
 			"geology": "/assets/geology-neptune.png"
 		},
+		"model": "/assets/models/Neptune.glb",
 		"sizes": [173, 285, 450]
 	}
 ]

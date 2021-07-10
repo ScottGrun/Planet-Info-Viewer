@@ -6,6 +6,7 @@ import PlanetStatsContainer from "../../components/PlanetStatsContainer/PlanetSt
 import { useEffect, useState } from "react";
 import MobileInfoSection from "../../components/PlanetInfoSections/MobileInfoSection";
 import {planets} from '../../data/data.js';
+import { motion } from "framer-motion";
 
 export default function Planet({ planet }) {
   const [sectionDisplayed, setSectionDisplayed] = useState(0);
@@ -15,15 +16,21 @@ export default function Planet({ planet }) {
       <MobileInfoSection
         sectionDisplayed={sectionDisplayed}
         setSectionDisplayed={setSectionDisplayed}
+        planet={planet.name}
       />
       <Wrapper>
         <MobileSectionToggler></MobileSectionToggler>
-
+        <ImgContainer>
         <ImgContainer>
           <PlanetImgContainer
+            sectionDisplayed={sectionDisplayed}
+            modelSrc={planet.model}
             imgSrc={planet.images.planet}
+            internalSrc={planet.images.internal}
+
             sizes={planet.sizes}
           />
+        </ImgContainer>
         </ImgContainer>
 
         <DescriptionContainer>
@@ -98,6 +105,9 @@ const Wrapper = styled.div`
 
 const ImgContainer = styled.div`
   grid-area: planet-img;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const DescriptionContainer = styled.div`

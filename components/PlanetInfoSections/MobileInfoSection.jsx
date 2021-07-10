@@ -1,28 +1,48 @@
-import styled from 'styled-components';
-import { baseSectionNameStyles } from '../../styles/typography';
+import styled from "styled-components";
+import { baseSectionNameStyles } from "../../styles/typography";
 import { Tabs, TabList, Tab, TabPanels, TabPanel } from "@reach/tabs";
+import { useEffect, useState } from "react";
 
-export default function PlanetInfoSections({ className, sectionDisplayed, setSectionDisplayed }) {
+export default function MobileInfoSection({
+  className,
+  sectionDisplayed,
+  setSectionDisplayed,
+  planet
+}) {
+  const [selected, setSelected] = useState(0);
+
+  useEffect(() => {
+    setSelected(sectionDisplayed);
+  }, [sectionDisplayed])
+
   return (
-    <Wrapper className={className} index={sectionDisplayed} onChange={(index)=> setSectionDisplayed(index)}>
-      <StyledTabList>
-        <SectionNameContainer><SectionName>Overview</SectionName></SectionNameContainer>
-        <SectionNameContainer><SectionName>Structure</SectionName></SectionNameContainer>
-        <SectionNameContainer><SectionName>Surface</SectionName></SectionNameContainer>
+    <Wrapper
+      className={className}
+      index={selected}
+      onChange={(index) => setSectionDisplayed(index)}
+    >
+      <StyledTabList planet={planet}>
+        <SectionNameContainer>
+          <SectionName>Overview</SectionName>
+        </SectionNameContainer>
+        <SectionNameContainer>
+          <SectionName>Structure</SectionName>
+        </SectionNameContainer>
+        <SectionNameContainer>
+          <SectionName>Surface</SectionName>
+        </SectionNameContainer>
       </StyledTabList>
     </Wrapper>
-  )
+  );
 }
 
-
 const Wrapper = styled(Tabs)`
-position: fixed;
-top: 68px;
-width: 100%;
+  position: fixed;
+  top: 68px;
+  width: 100%;
 
-z-index: 5;
-background-color: ${p => p.theme.COLORS.dark[900]};
- 
+  z-index: 1;
+  background-color: ${(p) => p.theme.COLORS.dark[900]};
 
   @media ${(p) => p.theme.QUERIES.tabletAndUp} {
     display: none;
@@ -30,44 +50,50 @@ background-color: ${p => p.theme.COLORS.dark[900]};
 `;
 
 const StyledTabList = styled(TabList)`
-   display: flex;
+  display: flex;
   justify-content: space-between;
   padding: 0 24px;
   height: 52px;
   width: 100%;
 
-  border-bottom: solid 1px ${p => p.theme.COLORS.dark[700]};
-  border-top: solid 1px ${p => p.theme.COLORS.dark[700]} ;
+  border-bottom: solid 1px ${(p) => p.theme.COLORS.dark[700]};
+  border-top: solid 1px ${(p) => p.theme.COLORS.dark[700]};
+
+  [data-reach-tab][data-selected] {
+    border-color: ${(p) => p.theme.COLORS[p.planet]};
+  }
+
 `;
 
 const SectionNameContainer = styled(Tab)`
   position: relative;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   gap: 43px;
+
+  height: 100%;
   border-width: 4px;
 
-  justify-content: space-between;
-align-items: center;
-height: 100%;
 
 
 `;
 
 const SectionName = styled.p`
   ${baseSectionNameStyles}
-    text-transform: uppercase;
-    text-align: center;
-    color: ${p => p.theme.COLORS.dark[500]};
+  text-transform: uppercase;
+  text-align: center;
+  color: ${(p) => p.theme.COLORS.dark[500]};
 
-    &:active {
-        color: ${p => p.theme.COLORS.white}
-    }
+  &:active {
+    color: ${(p) => p.theme.COLORS.white};
+  }
 
-    &:hover {
-        color: ${p => p.theme.COLORS.white}
-    }
+  &:hover {
+    color: ${(p) => p.theme.COLORS.white};
+  }
 
-    &:focused {
-        color: ${p => p.theme.COLORS.white}
-    }
+  &:focused {
+    color: ${(p) => p.theme.COLORS.white};
+  }
 `;

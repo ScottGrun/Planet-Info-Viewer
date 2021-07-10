@@ -1,26 +1,37 @@
-import styled from 'styled-components'
-import PlanetImgContainer from '../components/PlanetImgContainer/PlanetImgContainer';
-import PlanetInfoSection from '../components/PlanetInfoSections/MobileInfoSection'
-import PlanetDescription from '../components/PlanetDescription/PlanetDescription';
-import PlanetStatsContainer from '../components/PlanetStatsContainer/PlanetStatsContainer';
-import { useState } from 'react';
-import MobileInfoSection from '../components/PlanetInfoSections/MobileInfoSection';
-import {planets} from '../data/data.js';
+import styled from "styled-components";
+import PlanetImgContainer from "../components/PlanetImgContainer/PlanetImgContainer";
+import PlanetDescription from "../components/PlanetDescription/PlanetDescription";
+import PlanetStatsContainer from "../components/PlanetStatsContainer/PlanetStatsContainer";
+import { useState } from "react";
+import MobileInfoSection from "../components/PlanetInfoSections/MobileInfoSection";
+import { planets } from "../data/data.js";
+import { motion } from "framer-motion";
 
 export default function Planet({ planet }) {
   const [sectionDisplayed, setSectionDisplayed] = useState(0);
+  console.log("tasd", planet.name);
   return (
-    <>
+    <motion.div
+      exitBeforeEnter
+      animate={{ opacity: 1 }}
+      initial={false}
+      exit={{ opacity: 0 }}
+    >
       <MobileInfoSection
         sectionDisplayed={sectionDisplayed}
         setSectionDisplayed={setSectionDisplayed}
+        planet={planet.name}
       />
       <Wrapper>
         <MobileSectionToggler></MobileSectionToggler>
 
         <ImgContainer>
           <PlanetImgContainer
+            sectionDisplayed={sectionDisplayed}
+            planetname={planet.name}
+            modelSrc={planet.model}
             imgSrc={planet.images.planet}
+            internalSrc={planet.images.internal}
             sizes={planet.sizes}
           />
         </ImgContainer>
@@ -36,6 +47,8 @@ export default function Planet({ planet }) {
             structureSrc={planet.structure.source}
             geology={planet.geology.content}
             geologySrc={planet.geology.source}
+            orbit={planet.orbit.content}
+            orbitSrc={planet.orbit.source}
           />
         </DescriptionContainer>
 
@@ -48,11 +61,11 @@ export default function Planet({ planet }) {
           />
         </StatsContainer>
       </Wrapper>
-    </>
+    </motion.div>
   );
 }
 
-const Wrapper = styled.div`
+const Wrapper = styled.main`
   display: grid;
   min-height: 100vh;
   grid-template-columns: repeat(4, 1fr);
@@ -116,12 +129,10 @@ const MobileSectionToggler = styled.div`
   grid-area: mobile-section-toggler;
 `;
 
-
 export async function getStaticProps(context) {
-
   const planet = planets[0];
 
   return {
-    props: {planet}, // will be passed to the page component as props
-  }
+    props: { planet }, // will be passed to the page component as props
+  };
 }
