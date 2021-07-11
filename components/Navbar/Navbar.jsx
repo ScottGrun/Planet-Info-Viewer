@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import React from "react";
-import { baseLogoStyle, baseNavStyles } from "../../styles/typography";
+import React, {useState} from "react";
 import Image from "next/image";
+import { baseLogoStyle} from "../../styles/typography";
 import logoIcon from "../../public/assets/icon-hamburger.svg";
-import NavItem from "./NavItem";
 import Menu from "../Menu/Menu";
-import {useState} from 'react';
+import NavItem from "./NavItem";
+
 export default function Navbar() {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
   return (

@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { baseSectionNameStyles } from "../../styles/typography";
-import { Tabs, TabList, Tab, TabPanels, TabPanel } from "@reach/tabs";
+import { Tabs, TabList, Tab} from "@reach/tabs";
 import { useEffect, useState } from "react";
+import { baseSectionNameStyles } from "../../styles/typography";
 
 export default function MobileInfoSection({
   className,

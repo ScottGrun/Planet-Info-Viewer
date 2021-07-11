@@ -1,12 +1,11 @@
 import styled from "styled-components";
+import {  useState } from "react";
+import Script from "next/script";
 import PlanetImgContainer from "../../components/PlanetImgContainer/PlanetImgContainer";
-import PlanetInfoSection from "../../components/PlanetInfoSections/MobileInfoSection";
 import PlanetDescription from "../../components/PlanetDescription/PlanetDescription";
 import PlanetStatsContainer from "../../components/PlanetStatsContainer/PlanetStatsContainer";
-import { useEffect, useState } from "react";
 import MobileInfoSection from "../../components/PlanetInfoSections/MobileInfoSection";
 import {planets} from '../../data/data.js';
-import { motion } from "framer-motion";
 
 export default function Planet({ planet }) {
   const [sectionDisplayed, setSectionDisplayed] = useState(0);
@@ -27,7 +26,7 @@ export default function Planet({ planet }) {
             modelSrc={planet.model}
             imgSrc={planet.images.planet}
             internalSrc={planet.images.internal}
-
+            iosModelSrc={planet.iosModel}
             sizes={planet.sizes}
           />
         </ImgContainer>
@@ -56,6 +55,7 @@ export default function Planet({ planet }) {
           />
         </StatsContainer>
       </Wrapper>
+      <Script  type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js" />
     </>
   );
 }

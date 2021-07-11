@@ -1,22 +1,16 @@
 import styled from "styled-components";
+import { useState } from "react";
+import Script from "next/script";
 import PlanetImgContainer from "../components/PlanetImgContainer/PlanetImgContainer";
 import PlanetDescription from "../components/PlanetDescription/PlanetDescription";
 import PlanetStatsContainer from "../components/PlanetStatsContainer/PlanetStatsContainer";
-import { useState } from "react";
 import MobileInfoSection from "../components/PlanetInfoSections/MobileInfoSection";
 import { planets } from "../data/data.js";
-import { motion } from "framer-motion";
 
 export default function Planet({ planet }) {
   const [sectionDisplayed, setSectionDisplayed] = useState(0);
-  console.log("tasd", planet.name);
   return (
-    <motion.div
-      exitBeforeEnter
-      animate={{ opacity: 1 }}
-      initial={false}
-      exit={{ opacity: 0 }}
-    >
+    <>
       <MobileInfoSection
         sectionDisplayed={sectionDisplayed}
         setSectionDisplayed={setSectionDisplayed}
@@ -30,6 +24,7 @@ export default function Planet({ planet }) {
             sectionDisplayed={sectionDisplayed}
             planetname={planet.name}
             modelSrc={planet.model}
+            iosModelSrc={planet.iosModel}
             imgSrc={planet.images.planet}
             internalSrc={planet.images.internal}
             sizes={planet.sizes}
@@ -61,7 +56,11 @@ export default function Planet({ planet }) {
           />
         </StatsContainer>
       </Wrapper>
-    </motion.div>
+      <Script
+        type="module"
+        src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
+      />
+    </>
   );
 }
 
@@ -129,9 +128,8 @@ const MobileSectionToggler = styled.div`
   grid-area: mobile-section-toggler;
 `;
 
-export async function getStaticProps(context) {
+export async function getStaticProps() {
   const planet = planets[0];
-
   return {
     props: { planet }, // will be passed to the page component as props
   };

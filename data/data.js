@@ -27,6 +27,7 @@ export const planets = [
 			"geology": "/assets/geology-mercury.png"
 		},
 		"model": "/assets/models/Mercury.glb",
+		"iosModel": "/assets/models/ios/Mercury.usdz",
 		"sizes": [111, 184, 290]
 	},
 	{
@@ -53,6 +54,7 @@ export const planets = [
 			"geology": "/assets/geology-venus.png"
 		},
 		"model": "/assets/models/Venus.glb",
+		"iosModel": "/assets/models/ios/Venus.usdz",
 		"sizes": [154, 253, 400]
 	},
 	{
@@ -79,6 +81,7 @@ export const planets = [
 			"geology": "/assets/geology-earth.png"
 		},
 		"model": "/assets/models/Earth.glb",
+		"iosModel": "/assets/models/ios/Earth.usdz",
 		"sizes": [173, 285, 450]
 	},
 	{
@@ -105,6 +108,7 @@ export const planets = [
 			"geology": "/assets/geology-mars.png"
 		},
 		"model": "/assets/models/Mars.glb",
+		"iosModel": "/assets/models/ios/Mars.usdz",
 		"sizes": [129, 213, 336]
 	},
 	{
@@ -131,6 +135,7 @@ export const planets = [
 			"geology": "/assets/geology-jupiter.png"
 		},
 		"model": "/assets/models/Jupiter.glb",
+		"iosModel": "/assets/models/ios/Jupiter.usdz",
 		"sizes": [224, 369, 582]
 	},
 	{
@@ -157,6 +162,7 @@ export const planets = [
 			"geology": "/assets/geology-saturn.png"
 		},
 		"model": "/assets/models/Saturn.glb",
+		"iosModel": "/assets/models/ios/Saturn.usdz",
 		"sizes": [256, 422, 665]
 	},
 	{
@@ -183,6 +189,7 @@ export const planets = [
 			"geology": "/assets/geology-uranus.png"
 		},
 		"model": "/assets/models/Uranus.glb",
+		"iosModel": "/assets/models/ios/Uranus.usdz",
 		"sizes": [176, 290, 458]
 	},
 	{
@@ -209,6 +216,7 @@ export const planets = [
 			"geology": "/assets/geology-neptune.png"
 		},
 		"model": "/assets/models/Neptune.glb",
+		"iosModel": "/assets/models/ios/Neptune.usdz",
 		"sizes": [173, 285, 450]
 	}
 ]

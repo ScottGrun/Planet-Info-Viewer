@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import React from "react";
 import Link from "next/link";
-import { baseNavStyles } from "../../styles/typography";
 import { useRouter } from "next/router";
-import {motion} from 'framer-motion';
+import {m} from 'framer-motion';
+import { baseNavStyles } from "../../styles/typography";
 
 export default function NavItem({ linkTo, children, name }) {
   const router = useRouter();
@@ -13,7 +13,7 @@ export default function NavItem({ linkTo, children, name }) {
       <Link href={linkTo} passHref>
         <a>{children}</a>
       </Link>
-      <motion.hr key={route}  initial={{height: 0}} animate={{height: 4}}/>
+      <m.hr key={route}  initial={{height: 0}} animate={{height: 4}}/>
     </Wrapper>
   );
 }

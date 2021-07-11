@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import React, { useState } from "react";
-import { baseBodyStyles, h2BaseStyles } from "../../styles/typography";
-import InfoSection from "../PlanetInfoSections/InfoSection";
+import React from "react";
 import { Tabs, TabPanels, TabPanel } from "@reach/tabs";
 import Image from "next/image";
-import { AnimatePresence, motion } from "framer-motion";
+import {motion} from "framer-motion";
+import InfoSection from "../PlanetInfoSections/InfoSection";
+import { baseBodyStyles, h2BaseStyles } from "../../styles/typography";
 
 export default function PlanetDescription({
   name,
@@ -26,21 +26,19 @@ export default function PlanetDescription({
     >
       <ContentWrapper>
         <PlanetName
+          key={name}
           initial={{ y: 25, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ type: "spring", stiffness: 70 }}
-
         >
           {name}
         </PlanetName>
-        <TabPanels>
-          <TabPanel>
-            <Description
-            >
-              {overview}
-            </Description>
 
+        <TabPanels>
+        
+          <TabPanel>
+            <Description>{overview}</Description>
             <InformationSource>
               <Source
                 href={overviewSrc}

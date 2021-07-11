@@ -1,14 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 import Image from "next/image";
-
+import backgroundImgSrc from '../../public/assets/background-stars.svg';
 export default function Background() {
   return (
     <BackgroundImg>
       <Image
-        src="/assets/background-stars.svg"
+        src={backgroundImgSrc}
         layout="fill"
         objectFit="cover"
+        alt="Image of a starfield"
       />
     </BackgroundImg>
   );

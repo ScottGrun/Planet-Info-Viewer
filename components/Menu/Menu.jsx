@@ -1,10 +1,9 @@
 import styled from "styled-components";
 import React, { useRef } from "react";
+import { motion } from "framer-motion";
 import MenuItem from "./MenuItem";
-import { motion, useCycle } from "framer-motion";
 
 export default function Menu({ menuIsOpen, setMenuIsOpen }) {
-  const [isOpen, toggleOpen] = useCycle(false, true);
   const containerRef = useRef(null);
   const height = "100%";
 
