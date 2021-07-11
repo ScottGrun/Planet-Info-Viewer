@@ -122,7 +122,7 @@ const Wrapper = styled.div`
 `;
 
 const PlanetVector = styled.div`
-  display: ${(p) => (p.sectionDisplayed !== 2 ? "block" : "none")};
+  display: ${(p) => (p.sectionDisplayed === 0 ? "block" : "none")};
 `;
 
 const PlanetOverlay = styled.div`
