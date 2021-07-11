@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import React from "react";
-import { baseSectionNameStyles } from "../../styles/typography";
-import { TabList, Tab } from "@reach/tabs";
-import "@reach/tabs/styles.css";
 import { motion } from "framer-motion";
+import { TabList, Tab } from "@reach/tabs";
+import { baseSectionNameStyles } from "../../styles/typography";
+import "@reach/tabs/styles.css";
 
 export default function InfoSection({ className, planetname }) {
   return (

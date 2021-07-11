@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { useRouter } from "next/router";
 import Script from "next/script";
 import useWindowSize from "../../hooks/useWindowSize";
