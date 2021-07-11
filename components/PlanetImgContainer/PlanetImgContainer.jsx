@@ -44,36 +44,33 @@ export default function PlanetImgContainer({
         width={sizes[planetSize]}
         sectionDisplayed={sectionDisplayed}
       >
-        <AnimatePresence>
-          <motion.div
-            key={router.query.name}
-            transition={{ type: "spring", stiffness: 100 }}
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
-          >
-            <PlanetVector sectionDisplayed={sectionDisplayed}>
-              <Image
-                alt="Image of planet."
-                src={imgSrc}
-                layout="fixed"
-                height={sizes[planetSize]}
-                width={sizes[planetSize]}
-              />
-            </PlanetVector>
-          </motion.div>
-        </AnimatePresence>
+        <PlanetVector
+          key={router.query.name}
+          transition={{ type: "spring", stiffness: 100 }}
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 1, scale: 1 }}
+          sectionDisplayed={sectionDisplayed}
+        >
+          <Image
+            alt="Image of planet."
+            src={imgSrc}
+            layout="fixed"
+            height={sizes[planetSize]}
+            width={sizes[planetSize]}
+            priority="true"
+          />
+        </PlanetVector>
 
-        {sectionDisplayed == 1 && (
-          <PlanetOverlay sectionDisplayed={sectionDisplayed}>
-            <Image
-              alt="Image of planet's core"
-              src={internalSrc}
-              layout="fixed"
-              height={sizes[planetSize]}
-              width={sizes[planetSize]}
-            />
-          </PlanetOverlay>
-        )}
+        <PlanetOverlay sectionDisplayed={sectionDisplayed}>
+          <Image
+            alt="Image of planet's core"
+            src={internalSrc}
+            layout="fixed"
+            height={sizes[planetSize]}
+            width={sizes[planetSize]}
+            priority="true"
+          />
+        </PlanetOverlay>
 
         {isBrowser && (
           <model-viewer
@@ -121,10 +118,11 @@ const Wrapper = styled.div`
   }
 `;
 
-const PlanetVector = styled.div`
+const PlanetVector = styled(motion.div)`
   display: ${(p) => (p.sectionDisplayed === 0 ? "block" : "none")};
 `;
 
 const PlanetOverlay = styled.div`
   position: absolute;
+  display: ${(p) => (p.sectionDisplayed === 1 ? "block" : "none")};
 `;
