@@ -2,7 +2,7 @@ import styled from "styled-components";
 import React from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import {m} from 'framer-motion';
+import {motion} from 'framer-motion';
 import { baseNavStyles } from "../../styles/typography";
 
 export default function NavItem({ linkTo, children, name }) {
@@ -13,7 +13,7 @@ export default function NavItem({ linkTo, children, name }) {
       <Link href={linkTo} passHref>
         <a>{children}</a>
       </Link>
-      <m.hr key={route}  initial={{height: 0}} animate={{height: 4}}/>
+      <motion.hr key={route}  initial={{height: 0}} animate={{height: 4}}/>
     </Wrapper>
   );
 }
@@ -37,7 +37,6 @@ const Wrapper = styled.li`
     margin: 0;
     border: none;
     width: 100%;
-
     background-color: ${(p) => p.theme.COLORS[p.name]};
   }
 

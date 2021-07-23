@@ -19,7 +19,7 @@ export default function InfoSection({ className, planetname }) {
       </Section>
       <Section>
         <SectionNumber>03</SectionNumber>
-        <SectionName>Surface Geology</SectionName>
+        <SectionName>Surface Geology (AR/3D)</SectionName>
       </Section>
     </Wrapper>
   );

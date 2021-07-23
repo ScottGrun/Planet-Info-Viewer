@@ -6,7 +6,7 @@ export const BREAKPOINTS = {
 };
 
 // Themes
-export const lightTheme = {
+export const theme = {
     FONTS_FAMILY:{
         Antonio: "'Antonio', sans-serif",
         Spartan: "'Spartan', sans-serif",
