@@ -25,7 +25,6 @@ export default function Planet({ planet }) {
 				planet={planet.name}
 			/>
 			<Wrapper>
-				<MobileSectionToggler />
 
 				<ImgContainer>
 					<PlanetImgContainer

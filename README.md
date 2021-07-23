@@ -40,17 +40,16 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [Add solution URL here](https://www.frontendmentor.io/solutions/nextjs-styled-components-framer-motion-pNPMEcmZ5)
 - Live Site URL: [Add live site URL here](https://planet-info-viewer-scottgrun.vercel.app)
 
 ## My process
 
-
-1. Review the designs and check to see if a grid and design system are provided. If not I will attempt to create my own CSS design system and determine the best grid options.
+1. Review the designs and check to see if a grid and design system are provided. If not I will attempt to create my own CSS design system (making sure to try and make things as reuseable and DRY as possible) and determine the best grid options.
 
 2. Extract out whatever design system or style guide was provided into a styled components theme.
 
-3. I will go through and create a mobile-only version of the website first and then make my way up the breakpoints untill all required breakpoints are covered.
+3. I will go through and create a mobile version of the website first and then make my way up the breakpoints untill all required breakpoints are covered.
 
 4. Once the page is complete I will go through and check to see if any margins, padding, font sizes, or the copy is off / different from the designs.
 
@@ -66,59 +65,33 @@ Users should be able to:
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
+- [React](https://reactjs.org/) - JS library allowing me to create reusable components.
+- [Next.js](https://nextjs.org/) - React framework to provide the SSR & SSG rendering capabilties.
+- [Styled Components](https://styled-components.com/) - For styling components
 
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+This project was fairly deep dive for me. Throughout this project I challenged myself to learn technologies that I feel will become more important in the frontend world and that is Static and Server Side rendered apps, 3D / AR capable webistes, and sites that have fluid animations.
 
-To see how you can add code snippets, see below:
+In building this app I overcame a couple of neat challenges outlined below.
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
-```
+1. Static generating pages makes things super fast.
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
+2. Static generating pages makes things super fast but you loose access to the window object which can make things tricky. The model-viwer library that I used to display the 3D models requires access to the window object to make things work. So the soultion was to only start rendering the model on client and sinc pretty much everything else is done on the server this makes things super fast.
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+3. Really leveraging the themeing capabilties provided by styled-components makes things easy to change and manage from one central location.
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+1. In the future I plan to continue development by adding AR support for Android devices, currently it only works with IOS.
 
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+2. Refactor the data flow through the applications I feel like I could've used useContext in place of prop drilling everything.
 
-### Useful resources
-
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+- Website - [Add your name here](https://github.com/ScottGrun)
+- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/ScottGrun)
+- Twitter - [@yourusername](https://twitter.com/scott_grun)
 
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
