@@ -16,7 +16,6 @@ This is a solution to the [Planets fact site challenge on Frontend Mentor](https
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
 
@@ -40,8 +39,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://www.frontendmentor.io/solutions/nextjs-styled-components-framer-motion-pNPMEcmZ5)
-- Live Site URL: [Add live site URL here](https://planet-info-viewer-scottgrun.vercel.app)
+- [Live Site Here](https://www.frontendmentor.io/solutions/nextjs-styled-components-framer-motion-pNPMEcmZ5)
+- [Frontend Mentor Solution Here](https://planet-info-viewer-scottgrun.vercel.app)
 
 ## My process
 
