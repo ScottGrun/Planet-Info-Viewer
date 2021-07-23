@@ -90,7 +90,7 @@ In building this app I overcame a couple of neat challenges outlined below.
 
 ## Author
 
-- Website - [Add your name here](https://github.com/ScottGrun)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/ScottGrun)
-- Twitter - [@yourusername](https://twitter.com/scott_grun)
+- Website - [ScottGrun](https://github.com/ScottGrun)
+- Frontend Mentor - [@ScottGrun](https://www.frontendmentor.io/profile/ScottGrun)
+- Twitter - [@scott_grun](https://twitter.com/scott_grun)
 
