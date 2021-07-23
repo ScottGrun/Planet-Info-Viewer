@@ -132,10 +132,6 @@ const StatsContainer = styled.div`
 	}
 `;
 
-const MobileSectionToggler = styled.div`
-	grid-area: mobile-section-toggler;
-`;
-
 export async function getStaticProps() {
 	const planet = planets[0];
 	return {
