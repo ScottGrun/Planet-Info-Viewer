@@ -1,0 +1,1 @@
+export {SectionTabPanel} from './SectionTabPanel';

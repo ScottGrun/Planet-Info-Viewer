@@ -1,4 +1,13 @@
+/** @type {import('next').NextConfig} */
 module.exports = {
   reactStrictMode: true,
-  deviceSizes: [375, 768, 1440],
+  async redirects() {
+    return [
+      {
+        source: '/',
+        destination: '/planet/mercury',
+        permanent: true,
+      },
+    ]
+  },
 }
