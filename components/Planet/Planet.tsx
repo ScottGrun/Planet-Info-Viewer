@@ -8,7 +8,7 @@ interface PlanetProps {
 }
 
 export const Planet: FC<PlanetProps> = ({ alt, src }) => {
-  return <Image src={src} alt={alt} layout="fill" />;
+  return <Image src={src} alt={alt} layout="fill" loading="eager" />;
 };
 
 const Wrapper = styled.div`
