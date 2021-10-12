@@ -47,6 +47,7 @@ export const SectionTabPanel: FC<SectionTabPanelProps> = ({
                 environment-image="neutral"
                 auto-rotate
                 camera-controls
+                loading="eager"
               />
             )}
           </PlanetContainer>
