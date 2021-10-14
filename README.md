@@ -1,6 +1,8 @@
-# Frontend Mentor - Planets fact site solution
+# Planet Info Viewer - Learn about the planets in AR or 3D
 
-This is a solution to the [Planets fact site challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/planets-fact-site-gazqN8w_f). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [Invoice app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/invoice-app-i7KaLTQjl).
+
+I built this project intending to strengthen my project structure and component composition. I also was super keen to learn about web components and the many benefits they provide.
 
 ## Table of contents
 
@@ -9,29 +11,26 @@ This is a solution to the [Planets fact site challenge on Frontend Mentor](https
   - [Screenshot](#screenshot)
   - [Links](#links)
 - [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
-- [Author](#author)
-- [Acknowledgments](#acknowledgments)
+  - [🧰 Built with](#built-with)
+  - [💡 What I learned](#what-i-learned)
 
+# Overview
 
-## Overview
+## The challenge
 
-### The challenge
+MVP - Users should be able to:
 
-Users should be able to:
+- ✔️ View an image of each planetary body and seamless switch to viewing a cut out of its core
+- ✔️ Seamlessly switch between each section in an accessible way
+- ✔️ Each planet's image should have different sizes at the same breakpoint ex: mars will be smaller than earth at the same breakpoint
+- ✔️ Be fully responsive
 
-- View the optimal layout for the app depending on their device's screen size
-- See hover states for all interactive elements on the page
-- View each planet page and toggle between "Overview", "Internal Structure", and "Surface Geology"
+Extended Features - Users should be able to:
 
-### Extra Challenges I Gave Myself
-
-- 3D model of all planets
-- AR model of all planets (IOS only for now)
-- Server side rendering 
+- ✔️ Animations
+- ✔️ Seamlessly load in 3D models and not affect page performance
+- ✔️ Add suport for Augemented Reality on iOS
+- 🔲 Add support for Augmented Reality on Android
 
 ### Screenshot
 
@@ -39,58 +38,64 @@ Users should be able to:
 
 ### Links
 
-- [Live Site Here](https://www.frontendmentor.io/solutions/nextjs-styled-components-framer-motion-pNPMEcmZ5)
-- [Frontend Mentor Solution Here](https://planet-info-viewer-scottgrun.vercel.app)
+- Solution URL: [Add solution URL here](https://www.frontendmentor.io/solutions/ssr-invoice-app-CN8rae-Gb)
+- Live Site URL: [Add live site URL here](https://planet-info-viewer-scottgrun.vercel.app)
 
 ## My process
 
-1. Review the designs and check to see if a grid and design system are provided. If not I will attempt to create my own CSS design system (making sure to try and make things as reuseable and DRY as possible) and determine the best grid options.
+I went with a mobile-first approach for building this app which worked nicely. I would build components out completely across all breakpoints before moving on to the next. I also tried to break a bad habit of mine where I try to over-optimize too early on which just drags on the developments process and I believe I achieved that.
 
-2. Extract out whatever design system or style guide was provided into a styled components theme.
+### 🧰 Built with
 
-3. I will go through and create a mobile version of the website first and then make my way up the breakpoints untill all required breakpoints are covered.
+- [Next.js](https://nextjs.org/) - React framework
+- [Styled Components](https://styled-components.com/) - For styling
+- [Framer Motion](https://www.framer.com/docs/animation/) - For animations
+- [model-viewer](https://modelviewer.dev) -
 
-4. Once the page is complete I will go through and check to see if any margins, padding, font sizes, or the copy is off / different from the designs.
+## 💡 What I learned
 
-5. After that I will make an accessibility sweep and make sure that that all images have alt text, font colors meet WCAG guidelines, and the appropriate aria labels are added, and that the page tab order makes sense.
+### 3D Doesn't Need to be Hard!
 
-6. Add in any micro animations that are part of the design.
+I learned how to effectively load in 3D models while keeping the page snappy. I was able to achieve this through a combination of lazy-loading the models since they are not the first thing viewed.
 
+However, this means that when you clicked to view the model there would be a good 1-2seconds while the model loaded in where you would see a white square. I was able to overcome come this through the use of 'posters' meaning that when you click on the model I first display a .webp image that loads super fast and looks exactly like the model. Once the model loads the .webp image disappears and the model is displayed. This helps with the UX of the whole app as the user doesn't perceive the model loading cause they see an exact copy in image form for a second or two before it loads
 
-### Built with
+### `<dl>` : The Description List element
 
-- Semantic HTML5 markup
-- CSS custom properties
-- Flexbox
-- CSS Grid
-- Mobile-first workflow
-- [React](https://reactjs.org/) - JS library allowing me to create reusable components.
-- [Next.js](https://nextjs.org/) - React framework to provide the SSR & SSG rendering capabilties.
-- [Styled Components](https://styled-components.com/) - For styling components
+At the bottom of the page is a set of facts normally I would just render these as a `<div>` or a `<ul>` however I thought there must be a more semantic way to associate this data with the planet, turns out there is!
 
+Introducing the `<dl>` element, it is mainly used for implementing glossaries or to display metadata so I thought it would fit perfectly here.
 
-### What I learned
+Checkout this MDN example
 
-This project was fairly deep dive for me. Throughout this project I challenged myself to learn technologies that I feel will become more important in the frontend world and that is Static and Server Side rendered apps, 3D / AR capable webistes, and sites that have fluid animations.
+```html
+<p>Cryptids of Cornwall:</p>
 
-In building this app I overcame a couple of neat challenges outlined below.
+<dl>
+  <dt>Beast of Bodmin</dt>
+  <dd>A large feline inhabiting Bodmin Moor.</dd>
 
-1. Static generating pages makes things super fast.
+  <dt>Morgawr</dt>
+  <dd>A sea serpent.</dd>
 
-2. Static generating pages makes things super fast but you loose access to the window object which can make things tricky. The model-viwer library that I used to display the 3D models requires access to the window object to make things work. So the soultion was to only start rendering the model on client and sinc pretty much everything else is done on the server this makes things super fast.
+  <dt>Owlman</dt>
+  <dd>A giant owl-like creature.</dd>
+</dl>
+```
 
-3. Really leveraging the themeing capabilties provided by styled-components makes things easy to change and manage from one central location.
+My implementation is almost the same. Each fact is a div wrapping a `<dt>` for the fact name, and a `<dd>` for the fact-value, with all facts being wrapped in a `<dl>`;
 
-### Continued development
+### Improving my Project Structure
 
-1. In the future I plan to continue development by adding AR support for Android devices, currently it only works with IOS.
+Going into this project there were two key things I wanted to keep in mind and practice:
 
-2. Refactor the data flow through the applications I feel like I could've used useContext in place of prop drilling everything.
+1.  Simpler code is easier to read and more maintainable.
+2.  Keeping components that are tightly coupled together.
 
+#### Simpler Code is Easier to Read and More Maintainable.
 
-## Author
+Over time I have developed a bad habit of trying to optimize my code as much as possible despite not having any problems that required this aggressive level of optimization. This often led to me writing to code that was fast yet hard to read and come back to. So during this project, I tried to just focus on building and worry a bit less about performance. Turns out this improved site performance because the code I wrote was easier for me to read and reason about and therefore easier for me to spot bugs.
 
-- Website - [ScottGrun](https://github.com/ScottGrun)
-- Frontend Mentor - [@ScottGrun](https://www.frontendmentor.io/profile/ScottGrun)
-- Twitter - [@scott_grun](https://twitter.com/scott_grun)
+#### Keeping Components that are Tightly Coupled Together.
 
+Before this project, I believed that all components should have their file in the components folder. This led to me wasting time rooting around in the components folder looking for components that should only be used with a parent component. After looking at some open-source projects and getting some input from mentors I decided that **if a component should only be used with a parent it should be in that parent's folder too.**. This greatly improved the readability of the project structure and made it easier for me to reason where components live.

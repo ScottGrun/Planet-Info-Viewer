@@ -39,8 +39,11 @@ export const SectionTabPanel: FC<SectionTabPanelProps> = ({
             ) : (
               // @ts-expect-error - complaining about model-viewer when it doesnt need to
               <model-viewer
+                id="reveal"
                 style={{ width: "100%", height: "100%" }}
                 src={planet.model}
+                ios-src={planet.iosModel}
+                poster={planet.poster}
                 alt={`A 3D model of the planet ${planet.name}`}
                 ar
                 ar-modes="webxr scene-viewer quick-look"
@@ -70,7 +73,7 @@ export const SectionTabPanel: FC<SectionTabPanelProps> = ({
                 Structure
               </TabletSectionTab>
               <TabletSectionTab selectedSection={selectedSection} tabNumber="2">
-                Surface
+                Surface (3D / AR)
               </TabletSectionTab>
             </StyledTabletTabList>
           </PlanetInformation>

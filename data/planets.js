@@ -21,7 +21,8 @@ export const planets = [
 			"overview": "/assets/planets/overview/planet-mercury.svg",
 			"structure": "/assets/planets/structure/planet-mercury-internal.svg",
 		},
-		"model": "/assets/models/Mercury.glb",
+		"model": "/assets/models/Mercury/Mercury.glb",
+		"poster": "/assets/models/Mercury/poster.webp",
 		"iosModel": "/assets/models/ios/Mercury.usdz",
 		"sizes": [111, 184, 290]
 	},
@@ -47,7 +48,8 @@ export const planets = [
 			"overview": "/assets/planets/overview/planet-venus.svg",
 			"structure": "/assets/planets/structure/planet-venus-internal.svg",
 		},
-		"model": "/assets/models/Venus.glb",
+		"model": "/assets/models/Venus/Venus.glb",
+		"poster": "/assets/models/Venus/poster.webp",
 		"iosModel": "/assets/models/ios/Venus.usdz",
 		"sizes": [154, 253, 400]
 	},
@@ -73,7 +75,8 @@ export const planets = [
 			"overview": "/assets/planets/overview/planet-earth.svg",
 			"structure": "/assets/planets/structure/planet-earth-internal.svg",
 		},
-		"model": "/assets/models/Earth.glb",
+		"model": "/assets/models/Earth/Earth.glb",
+		"poster": "/assets/models/Earth/poster.webp",
 		"iosModel": "/assets/models/ios/Earth.usdz",
 		"sizes": [173, 285, 450]
 	},
@@ -99,7 +102,8 @@ export const planets = [
 			"overview": "/assets/planets/overview/planet-mars.svg",
 			"structure": "/assets/planets/structure/planet-mars-internal.svg",
 		},
-		"model": "/assets/models/Mars.glb",
+		"model": "/assets/models/Mars/Mars.glb",
+		"poster": "/assets/models/Mars/poster.webp",
 		"iosModel": "/assets/models/ios/Mars.usdz",
 		"sizes": [129, 213, 336]
 	},
@@ -125,7 +129,8 @@ export const planets = [
 			"overview": "/assets/planets/overview/planet-jupiter.svg",
 			"structure": "/assets/planets/structure/planet-jupiter-internal.svg",
 		},
-		"model": "/assets/models/Jupiter.glb",
+		"model": "/assets/models/Jupiter/Jupiter.glb",
+		"poster": "/assets/models/Jupiter/poster.webp",
 		"iosModel": "/assets/models/ios/Jupiter.usdz",
 		"sizes": [224, 369, 582]
 	},
@@ -151,7 +156,8 @@ export const planets = [
 			"overview": "/assets/planets/overview/planet-saturn.svg",
 			"structure": "/assets/planets/structure/planet-saturn-internal.svg",
 		},
-		"model": "/assets/models/Saturn.glb",
+		"model": "/assets/models/Saturn/Saturn.glb",
+		"poster": "/assets/models/Saturn/poster.webp",
 		"iosModel": "/assets/models/ios/Saturn.usdz",
 		"sizes": [256, 422, 665]
 	},
@@ -177,7 +183,8 @@ export const planets = [
 			"overview": "/assets/planets/overview/planet-uranus.svg",
 			"structure": "/assets/planets/structure/planet-uranus-internal.svg",
 		},
-		"model": "/assets/models/Uranus.glb",
+		"model": "/assets/models/Uranus/Uranus.glb",
+		"poster": "/assets/models/Uranus/poster.webp",
 		"iosModel": "/assets/models/ios/Uranus.usdz",
 		"sizes": [176, 290, 458]
 	},
@@ -203,7 +210,8 @@ export const planets = [
 			"overview": "/assets/planets/overview/planet-neptune.svg",
 			"structure": "/assets/planets/structure/planet-neptune-internal.svg",
 		},
-		"model": "/assets/models/Neptune.glb",
+		"model": "/assets/models/Neptune/Neptune.glb",
+		"poster": "/assets/models/Neptune/poster.webp",
 		"iosModel": "/assets/models/ios/Neptune.usdz",
 		"sizes": [173, 285, 450]
 	}

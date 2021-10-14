@@ -1,4 +1,4 @@
-import { createGlobalStyle, DefaultTheme} from "styled-components";
+import { createGlobalStyle, DefaultTheme } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle<{ theme: DefaultTheme }>`
 /* http://meyerweb.com/eric/tools/css/reset/
@@ -82,5 +82,9 @@ body::-webkit-scrollbar-track {
   background: transparent !important;    
     /* color of the tracking area */
 }
+
+model-viewer#reveal {
+    --poster-color: transparent;
+  }
 
 `;

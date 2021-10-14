@@ -29,6 +29,7 @@
     temperature: string;
     images: Images;
     model: string;
+    poster: string;
     iosModel: string;
     sizes: number[];
   }
