@@ -38,8 +38,7 @@ Extended Features - Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://www.frontendmentor.io/solutions/ssr-invoice-app-CN8rae-Gb)
-- Live Site URL: [Add live site URL here](https://planet-info-viewer-scottgrun.vercel.app)
+- Live Site URL: [Plane Info Viewer](https://planet-info-viewer-scottgrun.vercel.app)
 
 ## My process
 
